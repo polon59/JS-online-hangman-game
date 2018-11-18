@@ -31,12 +31,15 @@ body{
 }
 
 .letter{
+    float: left; 
     width: 4vw;
     height: 4vw;
     min-height: 30px;
     min-width: 30px;
-    padding: auto;
-    float: left;
     margin: 0.5vw;
+    text-align: center;
     border: 1px solid white;
+    font-size: x-large;
+    
 }
+
