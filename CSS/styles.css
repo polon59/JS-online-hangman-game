@@ -4,9 +4,24 @@ body{
 }
 
 #container{
-    width: 50%;
+    margin-top: 10%;
+    height: 40%;
+    width: 60%;
     background-color: grey;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+.contBottom{
+    height: 25vw;
+    width: 50%;
+    float: left;
     
+}
+
+#hangmanImageContainer{
+    background-image: url("../Resources/h1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
