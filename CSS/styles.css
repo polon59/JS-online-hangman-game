@@ -13,6 +13,10 @@ body{
     text-align: center;
 }
 
+#password{
+    margin: 5vw;
+}
+
 .contBottom{
     height: 25vw;
     width: 50%;
