@@ -7,7 +7,7 @@ body{
     margin-top: 10%;
     height: 40%;
     width: 60%;
-    background-color: grey;
+    /* background-color: grey; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -28,4 +28,15 @@ body{
     background-image: url("../Resources/h1.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.letter{
+    width: 4vw;
+    height: 4vw;
+    min-height: 30px;
+    min-width: 30px;
+    padding: auto;
+    float: left;
+    margin: 0.5vw;
+    border: 1px solid white;
 }
