@@ -12,8 +12,13 @@ body{
     text-align: center;
 }
 
-#password{
+#passwordBox{
     margin: 5vw;
+    margin-top: 0;
+}
+
+#category{
+    color: rgb(48, 48, 48);
 }
 
 h2{
@@ -57,14 +62,14 @@ h2{
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
     #container{
         width: 100%;
     }
 
     .contBottom{
         float: none;
-        width: 80%;
+        width: 70%;
         height: 20vh;
         margin-left: auto;
         margin-right: auto;

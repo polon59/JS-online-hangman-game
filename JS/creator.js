@@ -11,3 +11,8 @@ function displayAlphabet() {
 
     alphabetDiv.innerHTML = alphabetDivNewContent;
 }
+
+
+function selectPassword() {
+    var passwords = 
+}
