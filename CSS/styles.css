@@ -7,7 +7,6 @@ body{
     margin-top: 10%;
     height: 40%;
     width: 60%;
-    /* background-color: grey; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -15,6 +14,10 @@ body{
 
 #password{
     margin: 5vw;
+}
+
+h2{
+    font-size: x-large;
 }
 
 .contBottom{
@@ -40,6 +43,33 @@ body{
     text-align: center;
     border: 1px solid white;
     font-size: x-large;
-    
+}
+
+.letter:hover{
+    color: red;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+
+.letterHidden{
+    visibility: hidden;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #container{
+        width: 100%;
+    }
+
+    .contBottom{
+        float: none;
+        width: 80%;
+        height: 20vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
 
