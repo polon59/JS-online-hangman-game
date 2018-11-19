@@ -17,6 +17,10 @@ body{
     margin-top: 0;
 }
 
+#password{
+    letter-spacing: 0.5vw;
+}
+
 #category{
     color: rgb(48, 48, 48);
 }

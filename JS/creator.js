@@ -32,5 +32,27 @@ function initializePassword() {
 
 
 function displayPasswordAndCategory(selectedPassword) {
-    document.getElementById("category").innerHTML = `Category: ${selectedPassword.category}`;
+    var password = selectedPassword.value;
+    var hiddenPassword = hidePassword(password);
+
+    document.getElementById("password").innerHTML = hiddenPassword;
+    document.getElementById("category").innerHTML = `Category: ${selectedPassword.category}`;   
 }
+
+
+function hidePassword(password) {
+    var hiddenPassword = "";
+    
+        for (let i = 0; i < password.length; i++) {
+            if (password.charAt(i) == " ") {
+                hiddenPassword += " ";
+            }
+            else{
+                hiddenPassword += "_";
+            }
+        }
+    
+    return hiddenPassword;
+}
+
+
