@@ -1,4 +1,9 @@
-displayAlphabet();
+start();
+
+function start() {
+    displayAlphabet();
+    initializePassword();
+}
 
 function displayAlphabet() {
     var alphabetDiv = document.getElementById("alphabet");
@@ -13,6 +18,19 @@ function displayAlphabet() {
 }
 
 
-function selectPassword() {
-    var passwords = 
+function initializePassword() {
+    var passwords = new Array;
+
+    passwords.push({value:"THIS IS A PASSWORD", category:"Other"});
+    passwords.push({value:"ANOTHER PASSWORD", category:"Fruits"});
+    passwords.push({value:"AND ANOTHER PASSWORD", category:"Animals"});
+
+    var selectedPassword = passwords[Math.floor(Math.random() * passwords.length)];
+
+    displayPasswordAndCategory(selectedPassword);
+}
+
+
+function displayPasswordAndCategory(selectedPassword) {
+    document.getElementById("category").innerHTML = `Category: ${selectedPassword.category}`;
 }
