@@ -2,11 +2,15 @@
 var password;
 var category;
 var hiddenPassword = new Array;
-var lettersToGuess = 0;
+var lettersToGuess;
+var lives;
 
 start();
 
 function start() {
+    lettersToGuess = 0;
+    lives = 9;
+
     displayAlphabet();
     initializePassword();
     hidePassword();
@@ -82,12 +86,22 @@ function checkIfLetterInPassword(e) {
     }
 
     if (!guessed){
-        alert("hangman");
-        // to add : changing image
+        subtractLives();
     }
 
     if (lettersToGuess == 0) {
         alert("WIN");
+    }
+}
+
+function subtractLives() {
+    lives --;
+
+    if (lives == 0){
+        alert("GAME OVER");
+    }
+    else{
+        document.getElementById("hangmanImageContainer").style.backgroundImage = `url("Resources/h${lives}.jpg")`
     }
 }
 
