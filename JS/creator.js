@@ -41,14 +41,15 @@ function initializePassword() {
 
 function hidePassword() {
     
-        for (let i = 0; i < password.length; i++) {
-            if (password.charAt(i) == " ") {
-                hiddenPassword.push(" ");
-            }
-            else{
-                hiddenPassword.push("_");
-            }
+    for (let i = 0; i < password.length; i++) {
+        if (password.charAt(i) == " ") {
+            hiddenPassword.push(" ");
         }
+        else{
+            hiddenPassword.push("_");
+            lettersToGuess ++;
+        }
+    }
 }
 
 
@@ -68,12 +69,14 @@ function checkIfLetterInPassword(e) {
     let letter = e.target.textContent;
     let guessed = false;
 
+    e.target.style.visibility = "hidden";
+
     for (let index = 0; index < password.length; index++) {
 
         if (password.charAt(index) == letter) {
             hiddenPassword[index] = letter;
             displayPasswordAndCategory();
-            // lettersToGuess --;
+            lettersToGuess --;
             guessed = true;
         }     
     }
@@ -83,9 +86,11 @@ function checkIfLetterInPassword(e) {
         // to add : changing image
     }
 
-    // if (lettersToGuess == 0) {
-    //     alert("WIN");
-    // }
+    if (lettersToGuess == 0) {
+        alert("WIN");
+    }
 }
+
+
 
 
