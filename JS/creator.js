@@ -1,8 +1,16 @@
+
+var password;
+var category;
+var hiddenPassword = new Array;
+var lettersToGuess = 0;
+
 start();
 
 function start() {
     displayAlphabet();
     initializePassword();
+    hidePassword();
+    displayPasswordAndCategory();
 }
 
 function displayAlphabet() {
@@ -11,7 +19,7 @@ function displayAlphabet() {
     var alphabetDivNewContent = "";
 
     letters.forEach(letter => {
-        alphabetDivNewContent += `<div class="letter">${letter}</div>`
+        alphabetDivNewContent += `<div class="letter" onclick="checkIfLetterInPassword(event)">${letter}</div>`
     });
 
     alphabetDiv.innerHTML = alphabetDivNewContent;
@@ -26,33 +34,58 @@ function initializePassword() {
     passwords.push({value:"AND ANOTHER PASSWORD", category:"Animals"});
 
     var selectedPassword = passwords[Math.floor(Math.random() * passwords.length)];
-
-    displayPasswordAndCategory(selectedPassword);
+    password = selectedPassword.value;
+    category = selectedPassword.category;
 }
 
 
-function displayPasswordAndCategory(selectedPassword) {
-    var password = selectedPassword.value;
-    var hiddenPassword = hidePassword(password);
-
-    document.getElementById("password").innerHTML = hiddenPassword;
-    document.getElementById("category").innerHTML = `Category: ${selectedPassword.category}`;   
-}
-
-
-function hidePassword(password) {
-    var hiddenPassword = "";
+function hidePassword() {
     
         for (let i = 0; i < password.length; i++) {
             if (password.charAt(i) == " ") {
-                hiddenPassword += " ";
+                hiddenPassword.push(" ");
             }
             else{
-                hiddenPassword += "_";
+                hiddenPassword.push("_");
             }
         }
-    
-    return hiddenPassword;
+}
+
+
+function displayPasswordAndCategory() {
+    let hiddenPasswordValue = "";
+
+    hiddenPassword.forEach(element => {
+        hiddenPasswordValue += element;
+    });
+
+    document.getElementById("password").innerHTML = hiddenPasswordValue;
+    document.getElementById("category").innerHTML = `Category: ${category}`;   
+}
+
+
+function checkIfLetterInPassword(e) {
+    let letter = e.target.textContent;
+    let guessed = false;
+
+    for (let index = 0; index < password.length; index++) {
+
+        if (password.charAt(index) == letter) {
+            hiddenPassword[index] = letter;
+            displayPasswordAndCategory();
+            // lettersToGuess --;
+            guessed = true;
+        }     
+    }
+
+    if (!guessed){
+        alert("hangman");
+        // to add : changing image
+    }
+
+    // if (lettersToGuess == 0) {
+    //     alert("WIN");
+    // }
 }
 
 
