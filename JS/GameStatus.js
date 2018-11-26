@@ -2,7 +2,19 @@ class GameStatus{
 
     constructor(){
         this.gameStatusImageDiv = document.getElementById("hangmanImageContainer");
+        this.scoreImageDiv = document.getElementById("score");
         this.lives = 9;
+        this.score = 0;
+    }
+
+    addScore(value){
+        score+=value;
+        this.displayScore();
+    }
+
+
+    displayScore(){
+        scoreImageDiv.innerHTML = `SCORE : ${this.score}`;
     }
 
     
