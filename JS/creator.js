@@ -5,29 +5,23 @@ var hiddenPassword = new Array;
 var lettersToGuess;
 var lives;
 
+var alphabet = new Alphabet();
+
 start();
 
 function start() {
     lettersToGuess = 0;
     lives = 9;
 
-    displayAlphabet();
+    alphabet.displayAlphabet();
+
+
     initializePassword();
     hidePassword();
     displayPasswordAndCategory();
 }
 
-function displayAlphabet() {
-    var alphabetDiv = document.getElementById("alphabet");
-    var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","X","Y","Z"];
-    var alphabetDivNewContent = "";
 
-    letters.forEach(letter => {
-        alphabetDivNewContent += `<div class="letter" onclick="checkIfLetterInPassword(event)">${letter}</div>`
-    });
-
-    alphabetDiv.innerHTML = alphabetDivNewContent;
-}
 
 
 function initializePassword() {
