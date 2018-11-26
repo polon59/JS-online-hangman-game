@@ -16,4 +16,9 @@ class Alphabet{
     
         this.alphabetDiv.innerHTML = alphabetDivNewContent;
     }
+
+
+    hideUsedLetter(usedLetter){
+        usedLetter.target.style.visibility = "hidden";
+    }
 }

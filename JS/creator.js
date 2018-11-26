@@ -67,7 +67,7 @@ function checkIfLetterInPassword(e) {
     let letter = e.target.textContent;
     let guessed = false;
 
-    e.target.style.visibility = "hidden";
+    alphabet.hideUsedLetter(e);
 
     for (let index = 0; index < password.length; index++) {
 
