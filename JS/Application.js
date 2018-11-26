@@ -20,6 +20,12 @@ function performMove(e) {
 }
 
 
+ function generateNewPassword() {
+    password = new Password();
+    initialize();
+ }
+
+
 function checkIfPasswordIsComplete() {
     let lettersToGuess = password.getLettersToGuess();
 

@@ -12,6 +12,7 @@ class GameStatus{
     }
 
 
+
     subtractLives(){
         this.lives --;
         this.displayGameStatusImage();
