@@ -10,7 +10,9 @@ function initialize() {
 }
 
 function performMove(e) {
-    
+    alphabet.hideUsedLetter(e);
+    password.checkIfLetterInPassword(e);
+    password.displayPasswordAndCategory();
 }
 
 
@@ -18,7 +20,7 @@ function checkIfLetterInPassword(e) {
     let letter = e.target.textContent;
     let guessed = false;
 
-    alphabet.hideUsedLetter(e);
+    
 
     for (let index = 0; index < password.length; index++) {
 

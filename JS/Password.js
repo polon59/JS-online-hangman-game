@@ -16,6 +16,10 @@ class Password{
 
     }
 
+    // get lettersToGuess(){
+    //     return this.lettersToGuess;
+    // }
+
 
     hidePassword() {
         
@@ -39,34 +43,25 @@ class Password{
         });
     
         this.passwordDiv.innerHTML = valueToWrite;
-        this.categoryDiv.innerHTML = `Category: ${this.category}`;   
+        this.categoryDiv.innerHTML = `Category: ${this.passwordCategory}`;   
     }
 
 
-    // checkIfLetterInPassword(e) {
-    //     let letter = e.target.textContent;
-    //     let guessed = false;
+    checkIfLetterInPassword(e) {
+        let letter = e.target.textContent;
+        let guessed = false;
     
-    //     alphabet.hideUsedLetter(e);
+        for (let index = 0; index < this.passwordValue.length; index++) {
     
-    //     for (let index = 0; index < password.length; index++) {
-    
-    //         if (password.charAt(index) == letter) {
-    //             hiddenPassword[index] = letter;
-    //             displayPasswordAndCategory();
-    //             lettersToGuess --;
-    //             guessed = true;
-    //         }     
-    //     }
-    
-    //     if (!guessed){
-    //         subtractLives();
-    //     }
-    
-    //     if (lettersToGuess == 0) {
-    //         alert("WIN");
-    //     }
-    // }
+            if (this.passwordValue.charAt(index) == letter) {
+                this.hiddenPasswordValue[index] = letter;
+                this.lettersToGuess --;
+                guessed = true;
+            }     
+        }
+
+        return guessed;
+    }
 
 
 
