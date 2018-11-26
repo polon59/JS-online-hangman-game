@@ -1,5 +1,6 @@
 var alphabet = new Alphabet();
 var password = new Password();
+var gameStatus = new GameStatus();
 
 initialize();
 
@@ -11,32 +12,30 @@ function initialize() {
 
 function performMove(e) {
     alphabet.hideUsedLetter(e);
-    password.checkIfLetterInPassword(e);
+    let guessed = password.checkIfLetterInPassword(e);
     password.displayPasswordAndCategory();
+    changeLivesNumber(guessed);
+    checkIfPasswordIsComplete();
+    
 }
 
 
-function checkIfLetterInPassword(e) {
-    let letter = e.target.textContent;
-    let guessed = false;
-
-    
-
-    for (let index = 0; index < password.length; index++) {
-
-        if (password.charAt(index) == letter) {
-            hiddenPassword[index] = letter;
-            displayPasswordAndCategory();
-            lettersToGuess --;
-            guessed = true;
-        }     
-    }
-
-    if (!guessed){
-        subtractLives();
-    }
+function checkIfPasswordIsComplete() {
+    let lettersToGuess = password.getLettersToGuess();
 
     if (lettersToGuess == 0) {
         alert("WIN");
     }
 }
+
+
+function changeLivesNumber(guessed){
+    if (guessed) {
+        console.log("Haraszo");
+    } else {
+        gameStatus.subtractLives();
+    }  
+}
+
+
+

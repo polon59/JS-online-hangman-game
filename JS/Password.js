@@ -16,9 +16,9 @@ class Password{
 
     }
 
-    // get lettersToGuess(){
-    //     return this.lettersToGuess;
-    // }
+    getLettersToGuess(){
+        return this.lettersToGuess;
+    }
 
 
     hidePassword() {
