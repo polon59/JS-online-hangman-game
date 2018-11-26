@@ -30,6 +30,7 @@ function checkIfPasswordIsComplete() {
     let lettersToGuess = password.getLettersToGuess();
 
     if (lettersToGuess == 0) {
+        gameStatus.addScore(10);
         alert("WIN");
     }
 }
@@ -37,7 +38,7 @@ function checkIfPasswordIsComplete() {
 
 function changeLivesNumber(guessed){
     if (guessed) {
-        console.log("Haraszo");
+        gameStatus.addScore(1);
     } else {
         gameStatus.subtractLives();
     }  

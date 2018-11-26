@@ -8,13 +8,13 @@ class GameStatus{
     }
 
     addScore(value){
-        score+=value;
+        this.score+=value;
         this.displayScore();
     }
 
 
     displayScore(){
-        scoreImageDiv.innerHTML = `SCORE : ${this.score}`;
+        this.scoreImageDiv.innerHTML = `SCORE : ${this.score}`;
     }
 
     
