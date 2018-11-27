@@ -1,6 +1,7 @@
 var alphabet = new Alphabet();
 var password = new Password();
 var gameStatus = new GameStatus();
+// var display = new Display();
 
 initialize();
 
@@ -16,6 +17,8 @@ function performMove(e) {
     password.displayPasswordAndCategory();
     changeLivesNumber(guessed);
     checkIfPasswordIsComplete();
+
+    console.log(getData());
     
 }
 
