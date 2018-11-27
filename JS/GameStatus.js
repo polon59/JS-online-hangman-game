@@ -5,6 +5,7 @@ class GameStatus{
         this.scoreImageDiv = document.getElementById("score");
         this.lives = 9;
         this.score = 0;
+        this.popup = new Popup();
     }
 
 
@@ -32,12 +33,14 @@ class GameStatus{
     
         if (this.lives == 0) {
             alert("GAME OVER");
+            this.popup.displayGameOverPopup();
         }
     }
 
 
     addLevel(){
         alert("NEXT LEVEL");
+        this.popup.displayNextLevelPopup();
     }
 
 

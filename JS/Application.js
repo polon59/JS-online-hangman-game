@@ -17,8 +17,6 @@ function performMove(e) {
     password.displayPasswordAndCategory();
     changeLivesNumber(guessed);
     checkIfPasswordIsComplete();
-
-    console.log(getData());
     
 }
 
@@ -46,6 +44,8 @@ function changeLivesNumber(guessed){
         gameStatus.subtractLives();
     }  
 }
+
+
 
 
 

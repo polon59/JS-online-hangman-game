@@ -4,6 +4,7 @@
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.432);
+    display: none;
 }
 
 

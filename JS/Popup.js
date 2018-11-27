@@ -11,16 +11,23 @@ class Popup{
 
 
     displayNextLevelPopup(){
-
+        this.popupShadowDiv.style.display = "block";
+        this.popupHeaderDiv.innerHTML = "LEVEL COMPLETE!";
+        this.popupTimeDiv.innerHTML = "Your time: 5:39";
+        this.popupButton.innerHTML = "Next";
     }
 
 
     displayGameOverPopup(){
-        popupHeaderDiv.innerHTML = "GAME OVER";
+        this.popupShadowDiv.style.display = "block";
+        this.popupHeaderDiv.innerHTML = "GAME OVER";
+        this.popupHighScoreDiv.innerHTML = "NEW HIGHSCORE!";
+        this.popupTimeDiv.innerHTML = "Your time: 15:45";
+        this.popupButton.innerHTML = "Restart";
     }
 
 
-    hidePopup(){
-        popupShadowDiv.style.display = "none";
+    static hidePopup(){
+        document.getElementById("popupShadow").style.display = "none";
     }
 }
