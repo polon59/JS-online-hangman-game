@@ -32,15 +32,32 @@ class GameStatus{
         this.displayGameStatusImage();
     
         if (this.lives == 0) {
-            alert("GAME OVER");
-            this.popup.displayGameOverPopup();
+            this.restartGame();
+            //GAME OVER
         }
     }
 
 
-    addLevel(){
-        alert("NEXT LEVEL");
+
+    startNewLevel(){
+        //NEXT LEVEL
         this.popup.displayNextLevelPopup();
+        generateNewPassword();
+        //Full time = 0;
+    }
+
+
+
+    restartGame(){
+        this.popup.displayGameOverPopup();
+        this.lives = 9;
+        this.score = 0;
+        this.displayScore();
+        this.displayGameStatusImage();
+        generateNewPassword();
+        
+        //Full time = 0;
+        //Round time = 0;
     }
 
 

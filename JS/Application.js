@@ -32,7 +32,7 @@ function checkIfPasswordIsComplete() {
 
     if (lettersToGuess == 0) {
         gameStatus.addScore(10);
-        gameStatus.addLevel();
+        gameStatus.startNewLevel();
     }
 }
 
