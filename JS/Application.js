@@ -34,7 +34,7 @@ function checkIfPasswordIsComplete() {
 
     if (lettersToGuess == 0) {
         gameStatus.addScore(10);
-        alert("WIN");
+        gameStatus.addLevel();
     }
 }
 

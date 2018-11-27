@@ -7,6 +7,7 @@ class GameStatus{
         this.score = 0;
     }
 
+
     addScore(value){
         this.score+=value;
         this.displayScore();
@@ -33,6 +34,12 @@ class GameStatus{
             alert("GAME OVER");
         }
     }
+
+
+    addLevel(){
+        alert("NEXT LEVEL");
+    }
+
 
 
     
