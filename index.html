@@ -4,12 +4,15 @@
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/popups.css">
         <meta charset="utf-8">
+
+        
     </head>
 
     <body>
         <div id="container">
 
             <h3 id="score">SCORE : 0</h3>
+            <h3 id="totalTime">TOTAL TIME</h3>
 
             <div id="categoryBox">
                 <h3 id="category"></h3>
@@ -37,7 +40,7 @@
                 <div id="headImage"></div>
                 <h3 id="popupHeader">GAME OVER</h3>
                 <h3 id="popupHighScore">NEW HIGH SCORE!</h3>
-                <h4 id="popupTime">time : 99:00</h4>
+                <h4 id="roundTime">time : 99:00</h4>
                 <br>
                 <h4 id="popupButton" onclick="Popup.hidePopup()">Exit</h4>
             </div>
@@ -46,10 +49,14 @@
         
         
         <script src="JS/Popup.js"></script>
+        <script src="JS/Timer.js"></script>
         <script src="JS/Alphabet.js"></script>
+        <script src="JS/PasswordGenerator.js"></script>
         <script src="JS/Password.js"></script>
+        
         <script src="JS/GameStatus.js"></script>
         <script src="JS/Application.js"></script>
+        
         
         
     </body>
