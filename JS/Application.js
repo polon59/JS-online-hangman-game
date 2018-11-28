@@ -46,6 +46,11 @@ function changeLivesNumber(guessed){
 }
 
 
+function restartGame() {
+    gameStatus.restartGame();
+}
+
+
 
 
 

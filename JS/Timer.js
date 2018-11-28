@@ -2,24 +2,31 @@ class Timer{
 
     constructor(timerType){
         this.timerDiv = document.getElementById(timerType);
-        console.log(timerType);
-
+        this.isPaused = false;
         this.totalSeconds = 0;
-        setInterval(this.setTime, 1000);
+        setInterval(() => this.setTime(), 1000);
     }
 
 
     resetTime(){
         this.totalSeconds = 0;
+        console.log("RESET");
+        this.isPaused = false;
     }
 
-    
+
+    pause(){
+        this.isPaused = true;
+    }
+
 
     setTime() {
-      this.totalSeconds++;
-      let seconds = this.totalSeconds%60;
-      let minutes = this.totalSeconds/60;
-    this.timerDiv.innerHTML = `${minutes}:${seconds}`
+        if (!this.isPaused) {
+            this.totalSeconds++;
+            let seconds = this.totalSeconds%60;
+            let minutes = Math.trunc(this.totalSeconds/60);
+            this.timerDiv.innerHTML = `0${minutes}:${seconds}`;
+        }
     }
     
 

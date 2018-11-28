@@ -22,7 +22,7 @@ class Popup{
         this.popupShadowDiv.style.display = "block";
         this.popupHeaderDiv.innerHTML = "GAME OVER";
         this.popupHighScoreDiv.innerHTML = "NEW HIGHSCORE!";
-        this.popupTimeDiv.innerHTML = "Your time: 15:45";
+        // this.popupTimeDiv.innerHTML = "Your time: 15:45";
         this.popupButton.innerHTML = "Restart";
     }
 
