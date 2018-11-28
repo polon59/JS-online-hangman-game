@@ -43,7 +43,7 @@ class GameStatus{
         //NEXT LEVEL
         this.popup.displayNextLevelPopup();
         generateNewPassword();
-        //Full time = 0;
+        //Round time = 0;
     }
 
 
