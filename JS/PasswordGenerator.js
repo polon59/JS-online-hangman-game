@@ -6,6 +6,8 @@ class PasswordGenerator{
             category: ""
         };
 
+        
+
     }
 
     generatePassword(){
@@ -21,7 +23,7 @@ class PasswordGenerator{
     }
 
     assignValues(){
-        let fullPassword = getRandomPassword();
+        let fullPassword = this.getRandomPassword();
         let split = fullPassword.split(",");
         this.generatedPassword.value=split[0];
         this.generatedPassword.category=split[1];

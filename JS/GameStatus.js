@@ -6,8 +6,8 @@ class GameStatus{
         this.lives = 9;
         this.score = 0;
         this.popup = new Popup();
-        this.roundTimer = new Timer("roundTime");
-        this.gameTimer = new Timer("totalTime");
+        // this.roundTimer = new Timer("roundTime");
+        // this.gameTimer = new Timer("totalTime");
     }
 
 

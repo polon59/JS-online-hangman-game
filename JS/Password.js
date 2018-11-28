@@ -1,10 +1,11 @@
 class Password{
 
     constructor(){
-        //this.passwordGenerator = new PasswordGenerator();
-        //this.password = passwordGenerator.generatePassword();
+        
+        this.passwordGenerator = new PasswordGenerator();
 
-        this.password = {value:"THIS IS A PASSWORD", category:"Animals in Uganda"};
+        this.password = this.passwordGenerator.generatePassword();
+
 
         this.hiddenPasswordValue = new Array;
         this.passwordDiv = document.getElementById("password");

@@ -1,7 +1,7 @@
 class Timer{
 
     constructor(timerType){
-        // this.timerDiv = document.getElementById("roundTime");
+        this.timerDiv = document.getElementById(timerType);
         console.log(timerType);
 
         this.totalSeconds = 0;
@@ -19,9 +19,7 @@ class Timer{
       this.totalSeconds++;
       let seconds = this.totalSeconds%60;
       let minutes = this.totalSeconds/60;
-    //   this.timerDiv.innerHTML = `${minutes}:${seconds}`
-      var chuj = document.getElementById("totalTime");
-      chuj.innerHTML = `${minutes}:${seconds}`;
+    this.timerDiv.innerHTML = `${minutes}:${seconds}`
     }
     
 
