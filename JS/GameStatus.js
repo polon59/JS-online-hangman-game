@@ -6,12 +6,16 @@ class GameStatus{
         this.lives = 9;
         this.score = 0;
         this.popup = new Popup();
+        this.roundTimer = new Timer("roundTime");
+        this.gameTimer = new Timer("totalTime");
     }
 
 
     addScore(value){
         this.score+=value;
         this.displayScore();
+
+        
     }
 
 
@@ -32,8 +36,12 @@ class GameStatus{
         this.displayGameStatusImage();
     
         if (this.lives == 0) {
+
+            // GAME OVER
             this.restartGame();
-            //GAME OVER
+            this.roundTimer.resetTime();
+            this.gameTimer.resetTime();
+
         }
     }
 
@@ -43,6 +51,7 @@ class GameStatus{
         //NEXT LEVEL
         this.popup.displayNextLevelPopup();
         generateNewPassword();
+        this.roundTimer.resetTime();
         //Round time = 0;
     }
 

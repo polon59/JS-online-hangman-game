@@ -1,30 +1,37 @@
 class Timer{
 
     constructor(timerType){
+        // this.timerDiv = document.getElementById("roundTime");
+        console.log(timerType);
 
+        this.totalSeconds = 0;
+        setInterval(this.setTime, 1000);
     }
 
-    var timerDiv = document.getElementById("roundTime");
-    var totalTimeDiv = document.getElementById("totalTime");
 
-    var totalSeconds = 0;
-    setInterval(setTime, 1000);
-    
-    function setTime() {
-      ++totalSeconds;
-      let seconds = pad(totalSeconds % 60);
-      let minutes = pad(parseInt(totalSeconds / 60));
-      let timeString = `${minutes}:${seconds}`
+    resetTime(){
+        this.totalSeconds = 0;
     }
+
     
 
-    function pad(val) {
-      var valString = val + "";
-      if (valString.length < 2) {
-        return "0" + valString;
-      } else {
-        return valString;
-      }
+    setTime() {
+      this.totalSeconds++;
+      let seconds = this.totalSeconds%60;
+      let minutes = this.totalSeconds/60;
+    //   this.timerDiv.innerHTML = `${minutes}:${seconds}`
+      var chuj = document.getElementById("totalTime");
+      chuj.innerHTML = `${minutes}:${seconds}`;
     }
+    
+
+    // pad(val) {
+    //   var valString = val + "";
+    //   if (valString.length < 2) {
+    //     return "0" + valString;
+    //   } else {
+    //     return valString;
+    //   }
+    // }
 
 }
