@@ -53,8 +53,8 @@ class GameStatus{
 
 
     endLevel(){
-        this.popup.displayNextLevelPopup();
         this.stopTimers();
+        this.popup.displayNextLevelPopup();
     }
 
 
@@ -62,7 +62,7 @@ class GameStatus{
     startNewLevel(){
         generateNewPassword();
         this.roundTimer.resetTime();
-        this.startTimers();
+        this.gameTimer.startTimer();
     }
 
 
@@ -72,7 +72,7 @@ class GameStatus{
         this.score = 0;
         this.displayScore();
         this.displayGameStatusImage();
-        this.startTimers();
+        this.resetTimers();
         generateNewPassword();
     }
 
@@ -83,7 +83,7 @@ class GameStatus{
     }
 
     
-    startTimers(){
+    resetTimers(){
         this.roundTimer.resetTime();
         this.gameTimer.resetTime();
     }

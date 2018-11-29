@@ -11,7 +11,8 @@ class Popup{
     }
 
 
-    displayNextLevelPopup(roundTime){
+    displayNextLevelPopup(){
+        let roundTime = document.getElementById("roundTime").innerHTML;
         this.popupHeader = "LEVEL COMPLETE!";
         this.highscoreInfo = "";
         this.timeInfo = `This round time :  ${roundTime}`;
@@ -22,7 +23,8 @@ class Popup{
     }
 
 
-    displayGameOverPopup(gameTime, isResultInHighscore){
+    displayGameOverPopup(isResultInHighscore){
+        let gameTime = document.getElementById("totalTime").innerHTML;
         this.popupHeader = "LEVEL COMPLETE!";
         this.highscoreInfo = "";
         this.timeInfo = `Game time :  ${gameTime}`;
@@ -38,12 +40,15 @@ class Popup{
 
 
     writeNewContent(){
-        let newContent = `<div id="headImage"></div>
+        let newContent = `
+        <div id="popup">
+        <div id="headImage"></div>
             <h3 id="popupHeader">${this.popupHeader}</h3>
-            <h3 id="popupHighScore">${highscoreInfo}</h3>
-            <h4 id="roundTime">${timeInfo}</h4>
+            <h3 id="popupHighScore">${this.highscoreInfo}</h3>
+            <h4 id="time">${this.timeInfo}</h4>
             <br>
             <h4 id="popupButton" onclick="Popup.hidePopup() ; ${this.buttonFunction}">${this.buttonContent}</h4>
+        </div>
         </div>`
 
         this.popupShadowDiv.innerHTML = newContent;
