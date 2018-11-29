@@ -15,7 +15,7 @@ class Popup{
         let roundTime = document.getElementById("roundTime").innerHTML;
         this.popupHeader = "LEVEL COMPLETE!";
         this.highscoreInfo = "";
-        this.timeInfo = `This round time :  ${roundTime}`;
+        this.timeInfo = ` ${roundTime}`;
         this.buttonContent = "NEXT LEVEL";
         this.buttonFunction = "startNewLevel()"
 
@@ -27,7 +27,7 @@ class Popup{
         let gameTime = document.getElementById("totalTime").innerHTML;
         this.popupHeader = "GAME OVER!";
         this.highscoreInfo = "";
-        this.timeInfo = `Game time :  ${gameTime}`;
+        this.timeInfo = `${gameTime}`;
         this.buttonContent = "RESTART";
         this.buttonFunction = "restartGame()"
 

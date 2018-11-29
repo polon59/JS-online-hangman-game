@@ -12,6 +12,21 @@ body{
     text-align: center;
 }
 
+#navbar{
+    width: 100%;
+    height: 2%;
+    text-align: center;
+}
+
+.timeCounter{
+    color: rgb(146, 144, 144);
+}
+
+.navbar__cell{
+    float: left;
+    width: 33%;
+}
+
 #passwordBox{
     margin: 5vw;
     margin-top: 0;
@@ -83,5 +98,14 @@ h2{
     #hangmanImageContainer{
         max-width: 280px;
     }
+
+    .navbar__cell{
+        float: none;
+        width: 33%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
 

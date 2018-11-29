@@ -10,7 +10,6 @@ class Password{
         this.passwordValue;
         this.passwordCategory;
         this.lettersToGuess;
-        this.initializePassword();
     }
 
 
@@ -52,7 +51,7 @@ class Password{
         });
     
         this.passwordDiv.innerHTML = valueToWrite;
-        this.categoryDiv.innerHTML = `Category: ${this.passwordCategory}`;   
+        this.categoryDiv.innerHTML = `Capital: ${this.passwordCategory}`;   
     }
 
 
