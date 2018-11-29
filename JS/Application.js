@@ -7,8 +7,7 @@ initialize();
 
 function initialize() {
     alphabet.displayAlphabet();
-    password.hidePassword();
-    password.displayPasswordAndCategory();
+    password.initializePassword();
 }
 
 function performMove(e) {
@@ -22,7 +21,6 @@ function performMove(e) {
 
 
  function generateNewPassword() {
-    password = new Password();
     initialize();
  }
 

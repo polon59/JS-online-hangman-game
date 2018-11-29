@@ -1,10 +1,15 @@
 class Timer{
 
     constructor(timerType){
-        this.timerDiv = document.getElementById(timerType);
+        this.timerType = timerType;
+        this.timerDiv = document.getElementById(this.timerType);
+        this.timerName = timerType;
         this.isPaused = false;
         this.totalSeconds = 0;
+        
+
         setInterval(() => this.setTime(), 1000);
+        
     }
 
 
@@ -24,12 +29,22 @@ class Timer{
     }
 
 
+    setTimerName(){
+        if (this.timerType == "totalTime") {
+            return "Total time";
+        } else {
+            return "Round time";
+        }
+    }
+
+
     setTime() {
         if (!this.isPaused) {
             this.totalSeconds++;
             let seconds = this.adjustTimeFormat(this.totalSeconds%60);
             let minutes = this.adjustTimeFormat(Math.trunc(this.totalSeconds/60));
-            this.timerDiv.innerHTML = `${minutes}:${seconds}`;
+            let timerName = this.setTimerName();
+            this.timerDiv.innerHTML = `${timerName} :  ${minutes}:${seconds}`;
         }
     }
     

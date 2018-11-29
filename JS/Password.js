@@ -2,18 +2,26 @@ class Password{
 
     constructor(){
         
-        this.passwordGenerator = new PasswordGenerator();
-
-        this.password = this.passwordGenerator.generatePassword();
-
-
-        this.hiddenPasswordValue = new Array;
         this.passwordDiv = document.getElementById("password");
         this.categoryDiv = document.getElementById("category");
+        this.passwordGenerator = new PasswordGenerator();
+        this.password;
+        this.hiddenPasswordValue;
+        this.passwordValue;
+        this.passwordCategory;
+        this.lettersToGuess;
+        this.initializePassword();
+    }
+
+
+    initializePassword(){
+        this.password = this.passwordGenerator.generatePassword();
+        this.hiddenPasswordValue = new Array;
         this.passwordValue = this.password.value;
         this.passwordCategory = this.password.category;
         this.lettersToGuess = 0;
-        
+        this.hidePassword();
+        this.displayPasswordAndCategory();
 
     }
 
