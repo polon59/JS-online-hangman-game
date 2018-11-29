@@ -25,7 +25,7 @@ class PasswordGenerator{
     assignValues(){
         let fullPassword = this.getRandomPassword();
         let split = fullPassword.split(",");
-        this.generatedPassword.value=split[0];
+        this.generatedPassword.value=split[0].toUpperCase();
         this.generatedPassword.category=split[1];
         
     }
