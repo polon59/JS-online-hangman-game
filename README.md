@@ -1,4 +1,4 @@
-# JS hangman game
+## JS hangman game
 Popular hangman game created with JavaScript.
 Try to guess name of country which capital name is displayed on screen.
 You can use your keyboard or buttons on screen
