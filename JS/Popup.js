@@ -25,7 +25,7 @@ class Popup{
 
     displayGameOverPopup(isResultInHighscore){
         let gameTime = document.getElementById("totalTime").innerHTML;
-        this.popupHeader = "LEVEL COMPLETE!";
+        this.popupHeader = "GAME OVER!";
         this.highscoreInfo = "";
         this.timeInfo = `Game time :  ${gameTime}`;
         this.buttonContent = "RESTART";
