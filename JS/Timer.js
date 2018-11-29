@@ -11,9 +11,13 @@ class Timer{
     resetTime(){
         this.totalSeconds = 0;
         console.log("RESET");
-        this.isPaused = false;
+        this.startTimer();
+        
     }
 
+    startTimer(){
+        this.isPaused = false;
+    }
 
     pause(){
         this.isPaused = true;
@@ -36,5 +40,6 @@ class Timer{
         }
         return value;
     }
+
 
 }
