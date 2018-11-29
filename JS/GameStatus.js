@@ -52,12 +52,28 @@ class GameStatus{
 
 
 
-    startNewLevel(){
-        //NEXT LEVEL
+    endLevel(){
         this.popup.displayNextLevelPopup();
+        this.stopTimers();
+    }
+
+
+    // on button clicked
+    startNewLevel(){
         generateNewPassword();
         this.roundTimer.resetTime();
-        //Round time = 0;
+        this.startTimers();
+    }
+
+
+    // on button clicked
+    restartGame(){
+        this.lives = 9;
+        this.score = 0;
+        this.displayScore();
+        this.displayGameStatusImage();
+        this.startTimers();
+        generateNewPassword();
     }
 
 
@@ -73,17 +89,6 @@ class GameStatus{
     }
 
 
-    restartGame(){
-        this.lives = 9;
-        this.score = 0;
-        this.displayScore();
-        this.displayGameStatusImage();
-        this.startTimers();
-        generateNewPassword();
-        
-        //Full time = 0;
-        //Round time = 0;
-    }
 
 
 

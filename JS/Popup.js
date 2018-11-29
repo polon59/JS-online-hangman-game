@@ -2,28 +2,52 @@ class Popup{
 
     constructor(){
         this.popupShadowDiv = document.getElementById("popupShadow");
-        this.headImageDiv = document.getElementById("headImage");
-        this.popupHeaderDiv = document.getElementById("popupHeader");
-        this.popupHighScoreDiv = document.getElementById("popupHighScore");
-        this.popupTimeDiv = document.getElementById("popupTime");
-        this.popupButton = document.getElementById("popupButton");
+        this.popupHeader = "";
+        this.highscoreInfo = "";
+        this.timeInfo = "";
+        this.buttonContent = "";
+        this.buttonFunction = "";
+
     }
 
 
-    displayNextLevelPopup(){
-        this.popupShadowDiv.style.display = "block";
-        this.popupHeaderDiv.innerHTML = "LEVEL COMPLETE!";
-        this.popupTimeDiv.innerHTML = "Your time: 5:39";
-        this.popupButton.innerHTML = "Next";
+    displayNextLevelPopup(roundTime){
+        this.popupHeader = "LEVEL COMPLETE!";
+        this.highscoreInfo = "";
+        this.timeInfo = `This round time :  ${roundTime}`;
+        this.buttonContent = "NEXT LEVEL";
+        this.buttonFunction = "startNewLevel()"
+
+        this.writeNewContent();
     }
 
 
-    displayGameOverPopup(){
+    displayGameOverPopup(gameTime, isResultInHighscore){
+        this.popupHeader = "LEVEL COMPLETE!";
+        this.highscoreInfo = "";
+        this.timeInfo = `Game time :  ${gameTime}`;
+        this.buttonContent = "RESTART";
+        this.buttonFunction = "restartGame()"
+
+        if (isResultInHighscore) {
+            this.highscoreInfo = "NEW HIGH SCORE!";
+        }
+        
+        this.writeNewContent();
+    }
+
+
+    writeNewContent(){
+        let newContent = `<div id="headImage"></div>
+            <h3 id="popupHeader">${this.popupHeader}</h3>
+            <h3 id="popupHighScore">${highscoreInfo}</h3>
+            <h4 id="roundTime">${timeInfo}</h4>
+            <br>
+            <h4 id="popupButton" onclick="Popup.hidePopup() ; ${this.buttonFunction}">${this.buttonContent}</h4>
+        </div>`
+
+        this.popupShadowDiv.innerHTML = newContent;
         this.popupShadowDiv.style.display = "block";
-        this.popupHeaderDiv.innerHTML = "GAME OVER";
-        this.popupHighScoreDiv.innerHTML = "NEW HIGHSCORE!";
-        // this.popupTimeDiv.innerHTML = "Your time: 15:45";
-        this.popupButton.innerHTML = "Restart";
     }
 
 

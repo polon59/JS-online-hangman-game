@@ -32,7 +32,7 @@ function checkIfPasswordIsComplete() {
 
     if (lettersToGuess == 0) {
         gameStatus.addScore(10);
-        gameStatus.startNewLevel();
+        gameStatus.endLevel();
     }
 }
 
@@ -48,6 +48,11 @@ function changeLivesNumber(guessed){
 
 function restartGame() {
     gameStatus.restartGame();
+}
+
+
+function startNewLevel(){
+    gameStatus.startNewLevel();
 }
 
 
