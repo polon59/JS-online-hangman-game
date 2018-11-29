@@ -23,20 +23,18 @@ class Timer{
     setTime() {
         if (!this.isPaused) {
             this.totalSeconds++;
-            let seconds = this.totalSeconds%60;
-            let minutes = Math.trunc(this.totalSeconds/60);
-            this.timerDiv.innerHTML = `0${minutes}:${seconds}`;
+            let seconds = this.adjustTimeFormat(this.totalSeconds%60);
+            let minutes = this.adjustTimeFormat(Math.trunc(this.totalSeconds/60));
+            this.timerDiv.innerHTML = `${minutes}:${seconds}`;
         }
     }
     
 
-    // pad(val) {
-    //   var valString = val + "";
-    //   if (valString.length < 2) {
-    //     return "0" + valString;
-    //   } else {
-    //     return valString;
-    //   }
-    // }
+    adjustTimeFormat(value){
+        if (value < 10){
+            value = "0" + value;
+        }
+        return value;
+    }
 
 }
