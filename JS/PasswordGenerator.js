@@ -1,33 +1,62 @@
-class PasswordGenerator{ 
+class PasswordGenerator {
 
-    constructor(){
-        this.generatedPassword={
+    constructor() {
+        this.generatedPassword = {
             value: "",
             category: ""
         };
 
-        
-
+        this.indexesUsedBefore = [];
     }
 
-    generatePassword(){
+
+
+    generatePassword() {
+        console.log("generate");
         this.assignValues();
         return this.generatedPassword;
     }
 
-
-    getRandomPassword(){
+    getRandomInt() {
         let randomInt = Math.floor(Math.random() * allPasswords.length);
+
+        if (this.indexesUsedBefore.length == 0) {
+            this.indexesUsedBefore.push(randomInt);
+        } else {
+            if (this.indexesUsedBefore.length < allPasswords.length) { //if not all passwords were rolled
+
+                if (this.indexesUsedBefore.indexOf(randomInt) != -1) { //if int was rolled before, re-roll
+                    randomInt = this.getRandomInt();
+                    console.log("RE-ROLL");
+                }
+                else { //if int was not rolled before add it to array
+                    this.indexesUsedBefore.push(randomInt);
+                }
+            } else {
+                console.log("ALL PASSWORDS USED, RESETTING");
+                this.indexesUsedBefore.length = 0; //reset list of used passwords
+            }
+
+        }
+        //console.log(this.indexesUsedBefore);
+        return randomInt;
+    }
+
+
+    getRandomPassword() {
+        let randomInt = this.getRandomInt();
         let randomPassword = allPasswords[randomInt];
         return randomPassword;
     }
 
-    assignValues(){
+    assignValues() {
         let fullPassword = this.getRandomPassword();
+        if (fullPassword == undefined) {
+            fullPassword = this.getRandomPassword();
+        }
         let split = fullPassword.split(",");
-        this.generatedPassword.value=split[0].toUpperCase();
-        this.generatedPassword.category=split[1];
-        
+        this.generatedPassword.value = split[0].toUpperCase();
+        this.generatedPassword.category = split[1];
     }
 }
 
