@@ -26,6 +26,7 @@ h3{
     
 }
 
+
 .container__box{
     text-align: center;
 }
@@ -79,11 +80,11 @@ h2{
 
 .letter{
     float: left; 
-    width: 4vw;
-    height: 4vw;
+    width: 3.5vw;
+    height: 3.5vw;
     min-height: 30px;
     min-width: 30px;
-    margin: 0.5vw;
+    margin: 0.4vw;
     text-align: center;
     border: 1px solid rgb(170, 170, 170);
     font-size: x-large;
@@ -123,6 +124,15 @@ h2{
         width: 33%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    h3{
+        font-size: 14px;
+    }
+
+
+    h2{
+        font-size: 17px;
     }
 
 
