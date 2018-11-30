@@ -11,7 +11,7 @@ class Alphabet{
         var alphabetDivNewContent = "";
     
         this.letters.forEach(letter => {
-            alphabetDivNewContent += `<div class="letter" onclick="performMove(event)">${letter}</div>`
+            alphabetDivNewContent += `<div id="${letter}" class="letter" onclick="performMove(event)">${letter}</div>`
         });
     
         this.alphabetDiv.innerHTML = alphabetDivNewContent;
