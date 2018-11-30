@@ -7,21 +7,16 @@ class Input{
     
     
     checkKey(e) {
-    
         e = e || window.event;
-    
-        if (e.keyCode == '38') {
-            // up arrow
+        let pressedKeyCode = e.keyCode;
+        let pressedKeyValue = String.fromCharCode(pressedKeyCode);
+        
+        try {
+            document.getElementById(pressedKeyValue).click();
+        } catch (err) {
+            console.log("ERROR");
         }
-        else if (e.keyCode == '40') {
-            // down arrow
-        }
-        else if (e.keyCode == '37') {
-           // left arrow
-        }
-        else if (e.keyCode == '39') {
-           // right arrow
-        }
+        
     
     }
 }

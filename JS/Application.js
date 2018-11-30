@@ -1,7 +1,7 @@
 var alphabet = new Alphabet();
 var password = new Password();
 var gameStatus = new GameStatus();
-// var display = new Display();
+var input = new Input();
 
 initialize();
 
