@@ -9,33 +9,65 @@ class Input{
     checkKey(e) {
         e = e || window.event;
         let pressedKeyCode = e.keyCode;
-        let pressedKeyValue = String.fromCharCode(pressedKeyCode);
-        let letterButton;
         
-        try {
-            letterButton = document.getElementById(pressedKeyValue);
+        
+        if (pressedKeyCode === 13) {
+            document.getElementById("popupButton").click();
+        } else {
 
-            if (!(letterButton.style.visibility == "hidden")) {
-                letterButton.click();
+            let pressedKeyValue = String.fromCharCode(pressedKeyCode);
+            let letterButton;
+    
+            try {
+                letterButton = document.getElementById(pressedKeyValue);
+    
+                if (!(letterButton.style.visibility == "hidden")) {
+                    letterButton.click();
+                }
+                
+            } catch (err) {
+                console.log("ERROR");
             }
-            
-        } catch (err) {
-            console.log("ERROR");
         }
 
         
-
-    
     }
 
 
-    // isButtonAvailable(){
-    //     console.log("check");
-    //     if (this.letterButton.style.display == "none") {
-    //         console.log("USED");
-    //         return false;
+
+    // checkKey(e) {
+    //     e = e || window.event;
+    //     let pressedKeyCode = e.keyCode;
+        
+        
+    //     if (pressedKeyCode === 13) {
+    //         this.pressButtonOnPopupWithEnterKey();
+    //     } else {
+    //         this.pressButtonWithLetter();
     //     }
 
-    //     return true;
+        
+    // }
+
+
+    // pressButtonWithLetter(){
+    //     let pressedKeyValue = String.fromCharCode(pressedKeyCode);
+    //     let letterButton;
+
+    //     try {
+    //         letterButton = document.getElementById(pressedKeyValue);
+
+    //         if (!(letterButton.style.visibility == "hidden")) {
+    //             letterButton.click();
+    //         }
+            
+    //     } catch (err) {
+    //         console.log("ERROR");
+    //     }
+    // }
+
+
+    // pressButtonOnPopupWithEnterKey(){
+    //     document.getElementById("popupButton").click();
     // }
 }
