@@ -11,9 +11,10 @@ class Input{
         let pressedKeyCode = e.keyCode;
         
         
-        if (pressedKeyCode === 13) {
+        if (pressedKeyCode === 13 && document.getElementById("popupShadow").style.display == "block") {
             document.getElementById("popupButton").click();
-        } else {
+        } 
+        else {
 
             let pressedKeyValue = String.fromCharCode(pressedKeyCode);
             let letterButton;
