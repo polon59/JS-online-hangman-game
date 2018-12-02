@@ -5,6 +5,7 @@ class GameStatus{
         this.scoreImageDiv = document.getElementById("score");
         this.lives = 9;
         this.score = 0;
+        this.scoreEarnedOnLevel = 0;
         this.popup = new Popup();
         this.roundTimer = new Timer("roundTime");
         this.gameTimer = new Timer("totalTime");
@@ -13,6 +14,7 @@ class GameStatus{
 
     addScore(value){
         this.score+=value;
+        this.scoreEarnedOnLevel += value;
         this.displayScore();
 
         
@@ -36,25 +38,23 @@ class GameStatus{
         this.displayGameStatusImage();
     
         if (this.lives == 0) {
-
             // GAME OVER
             this.endGame();
-            
-
         }
     }
 
 
     endGame() {
         this.stopTimers();
-        this.popup.displayGameOverPopup();
+        this.popup.displayGameOverPopup(false, this.score);
     }
 
 
 
     endLevel(){
         this.stopTimers();
-        this.popup.displayNextLevelPopup();
+        this.popup.displayNextLevelPopup(this.scoreEarnedOnLevel);
+        this.scoreEarnedOnLevel = 0;
     }
 
 
