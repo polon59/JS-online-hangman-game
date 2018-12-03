@@ -35,6 +35,9 @@ class Password{
             if (this.passwordValue.charAt(i) == " ") {
                 this.hiddenPasswordValue.push(" ");
             }
+            else if (this.passwordValue.charAt(i) == "-") {
+                this.hiddenPasswordValue.push("-");
+            }
             else{
                 this.hiddenPasswordValue.push("_");
                 this.lettersToGuess ++;
