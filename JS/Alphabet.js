@@ -19,6 +19,9 @@ class Alphabet{
 
 
     hideUsedLetter(usedLetter){
+        usedLetter.target.style.color = "rgb(51, 23, 23)";
+        usedLetter.target.style.border = "1px solid rgb(51, 23, 23)";
         usedLetter.target.style.visibility = "hidden";
+        
     }
 }

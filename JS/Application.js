@@ -5,6 +5,8 @@ var input = new Input();
 
 initialize();
 
+
+
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
