@@ -1,28 +1,25 @@
 class Timer{
 
-    constructor(timerType){
-        this.timerType = timerType;
-        this.timerDiv = document.getElementById(this.timerType);
-        this.timerName = timerType;
+    constructor(timerID){
+        this.timerID = timerID;
+        this.timerName = this.setTimerName();
         this.isPaused = false;
         this.totalSeconds = 0;
         
-
         setInterval(() => this.setTime(), 1000);
-        
     }
 
 
     resetTime(){
         this.totalSeconds = 0;
-        console.log("RESET");
         this.startTimer();
-        
     }
+
 
     startTimer(){
         this.isPaused = false;
     }
+
 
     pause(){
         this.isPaused = true;
@@ -30,7 +27,7 @@ class Timer{
 
 
     setTimerName(){
-        if (this.timerType == "totalTime") {
+        if (this.timerID == "totalTime") {
             return "Total time";
         } else {
             return "Round time";
@@ -43,8 +40,8 @@ class Timer{
             this.totalSeconds++;
             let seconds = this.adjustTimeFormat(this.totalSeconds%60);
             let minutes = this.adjustTimeFormat(Math.trunc(this.totalSeconds/60));
-            let timerName = this.setTimerName();
-            this.timerDiv.innerHTML = `${timerName} :  ${minutes}:${seconds}`;
+
+            $(`#${this.timerID}`).html(`${this.timerName} :  ${minutes}:${seconds}`);
         }
     }
     
