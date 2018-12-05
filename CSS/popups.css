@@ -7,27 +7,20 @@
     display: none;
 }
 
-
 #popupButton:hover{
     color:red;
     cursor: pointer;
 }
 
-
-
 #popupHighScore{
     color: rgb(68, 68, 68);
 }
-
-
-
 
 #popup{
     position: relative;
     text-align: center;
     top: 30%;
-    box-shadow: 0px 0px 99px 93px  rgb(0, 0, 0);
-    background-color: rgb(12, 12, 12);
+    box-shadow: 0px 0px 26px 100px rgba(1,1,1,1);
     background-image: url("../Resources/popupFrame.jpg");
     background-size: 100% 100%;
     width: 50%; margin: auto;
