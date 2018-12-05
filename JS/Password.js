@@ -1,9 +1,6 @@
 class Password{
 
     constructor(){
-        
-        this.passwordDiv = document.getElementById("password");
-        this.categoryDiv = document.getElementById("category");
         this.passwordGenerator = new PasswordGenerator();
         this.password;
         this.hiddenPasswordValue;
@@ -53,8 +50,8 @@ class Password{
             valueToWrite += element;
         });
     
-        this.passwordDiv.innerHTML = valueToWrite;
-        this.categoryDiv.innerHTML = `Capital: ${this.passwordCategory}`;   
+        $("#password").html(valueToWrite);
+        $("#category").html(`Capital: ${this.passwordCategory}`);   
     }
 
 
