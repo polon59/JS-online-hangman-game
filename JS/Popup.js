@@ -8,7 +8,6 @@ class Popup{
         this.buttonContent = "";
         this.buttonFunction = "";
         this.guessedWords = "";
-
     }
 
 
@@ -55,12 +54,12 @@ class Popup{
         </div>
         </div>`
 
-        this.popupShadowDiv.innerHTML = newContent;
-        this.popupShadowDiv.style.display = "block";
+        $("#popupShadow").html(newContent);
+        $("#popupShadow").show(1000);
     }
 
 
     static hidePopup(){
-        document.getElementById("popupShadow").style.display = "none";
+        $("#popupShadow").hide(1000);
     }
 }
