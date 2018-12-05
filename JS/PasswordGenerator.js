@@ -12,7 +12,6 @@ class PasswordGenerator {
 
 
     generatePassword() {
-        console.log("generate");
         this.assignValues();
         return this.generatedPassword;
     }
@@ -27,13 +26,11 @@ class PasswordGenerator {
 
                 if (this.indexesUsedBefore.indexOf(randomInt) != -1) { //if int was rolled before, re-roll
                     randomInt = this.getRandomInt();
-                    console.log("RE-ROLL");
                 }
                 else { //if int was not rolled before add it to array
                     this.indexesUsedBefore.push(randomInt);
                 }
             } else {
-                console.log("ALL PASSWORDS USED, RESETTING");
                 this.indexesUsedBefore.length = 0; //reset list of used passwords
             }
 

@@ -1,7 +1,6 @@
 class Popup{
 
     constructor(){
-        this.popupShadowDiv = document.getElementById("popupShadow");
         this.popupHeader = "";
         this.scoreInfo = "";
         this.timeInfo = "";
@@ -35,6 +34,7 @@ class Popup{
 
         if (isResultInHighscore) {
             this.scoreInfo = `NEW HIGHSCORE: ${scoreEarnedInGame}`;
+            
         }
         
         this.writeNewContent();

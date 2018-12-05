@@ -1,7 +1,6 @@
 class Alphabet{
     
         constructor(){
-            this.alphabetDiv = document.getElementById("alphabet");
             this.letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U", "Q","V","W","X","Y","Z"];
     
         }
@@ -14,7 +13,7 @@ class Alphabet{
             alphabetDivNewContent += `<div id="${letter}" class="letter" onclick="performMove(event)">${letter}</div>`
         });
     
-        this.alphabetDiv.innerHTML = alphabetDivNewContent;
+        $("#alphabet").html(alphabetDivNewContent);
     }
 
 
