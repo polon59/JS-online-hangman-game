@@ -5,6 +5,7 @@ class GameStatus{
         this.scoreImageDiv = document.getElementById("score");
         this.lives = 9;
         this.score = 0;
+        this.guessedWordsNumber = 0;
         this.scoreEarnedOnLevel = 0;
         this.popup = new Popup();
         this.roundTimer = new Timer("roundTime");
@@ -16,8 +17,6 @@ class GameStatus{
         this.score+=value;
         this.scoreEarnedOnLevel += value;
         this.displayScore();
-
-        
     }
 
 
@@ -46,14 +45,15 @@ class GameStatus{
 
     endGame() {
         this.stopTimers();
-        this.popup.displayGameOverPopup(false, this.score);
+        this.popup.displayGameOverPopup(true, this.score, this.guessedWordsNumber);
     }
 
 
 
     endLevel(){
         this.stopTimers();
-        this.popup.displayNextLevelPopup(this.scoreEarnedOnLevel);
+        this.guessedWordsNumber++;
+        this.popup.displayNextLevelPopup(this.scoreEarnedOnLevel, this.guessedWordsNumber);
         this.scoreEarnedOnLevel = 0;
     }
 
