@@ -7,9 +7,8 @@ body{
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 0.1vw;
     content: url("../Resources/h8.jpg") url("../Resources/h9.jpg") url("../Resources/h7.jpg") url("../Resources/h6.jpg") url("../Resources/h5.jpg") url("../Resources/h4.jpg") url("../Resources/h3.jpg") url("../Resources/h2.jpg") url("../Resources/h1.jpg") url("../Resources/h0.jpg");
-
-    
 }
+
 
 h3{
     text-align: center;
@@ -66,7 +65,7 @@ h2{
 }
 
 .contBottom{
-    height: 25vw;
+    height: 20vw;
     width: 50%;
     float: left;
     
