@@ -6,6 +6,8 @@ var input = new Input();
 $(document).ready(initialize());
 
 
+
+
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
@@ -57,11 +59,13 @@ function startNewLevel(){
 
 
 function initializeMenu(params) {
+
     $("#menuLeftButton").click(function(){
         $("#menuLeftContent").animate({
           width: "toggle"
         });
       });
+
 }
 
 

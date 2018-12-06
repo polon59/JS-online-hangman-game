@@ -87,7 +87,8 @@
 
 
 .menuLeftContent__table--option:hover{
-    color: red;
+    filter: brightness(500%);
+    color: rgb(255, 0, 0);
     cursor: pointer;
 }
 
