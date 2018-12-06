@@ -37,7 +37,7 @@
 }
 
 
-#menuLeft-button{
+#menuLeft__button{
     z-index: 2;
     width: 2%;
     min-width: 20px;
@@ -50,6 +50,14 @@
     text-orientation: mixed;
     font-size: large;
     cursor: pointer;
+}
+
+#menuLeft__content{
+    width: 50%;
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(156, 156, 156);
+    border-left: none;
+    display: none;
 }
 
 #menuLeft-button:hover{

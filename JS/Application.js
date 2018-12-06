@@ -6,10 +6,10 @@ var input = new Input();
 initialize();
 
 
-
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
+    initializeMenu();
 }
 
 function performMove(e) {
@@ -54,6 +54,19 @@ function restartGame() {
 function startNewLevel(){
     gameStatus.startNewLevel();
 }
+
+
+function initializeMenu(params) {
+    $("#menuLeft__button").click(function(){
+        $("#menuLeft__content").slideToggle("slow");
+    });
+}
+
+// $(document).ready(function(){
+//     $("#menuLeft__button").click(function(){
+//         $("#menuLeft__content").slideToggle("slow");
+//     });
+// });
 
 
 
