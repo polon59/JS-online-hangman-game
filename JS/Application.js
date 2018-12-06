@@ -4,14 +4,13 @@ var gameStatus = new GameStatus();
 var input = new Input();
 
 $(document).ready(initialize());
-
+initializeMenu();
 
 
 
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
-    initializeMenu();
 }
 
 function performMove(e) {
@@ -58,7 +57,7 @@ function startNewLevel(){
 }
 
 
-function initializeMenu(params) {
+function initializeMenu() {
 
     $("#menuLeftButton").click(function(){
         $("#menuLeftContent").animate({
