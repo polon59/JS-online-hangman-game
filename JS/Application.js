@@ -4,13 +4,13 @@ var gameStatus = new GameStatus();
 var input = new Input();
 
 $(document).ready(initialize());
-initializeMenu();
 
 
 
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
+    initializeMenu();
 }
 
 function performMove(e) {
@@ -58,14 +58,21 @@ function startNewLevel(){
 
 
 function initializeMenu() {
-
     $("#menuLeftButton").click(function(){
-        $("#menuLeftContent").animate({
-          width: "toggle"
+        $("#menuLeftContent").animate({width: "toggle"});
         });
-      });
+}
+
+
+function findPasswordinGoogle(){
+    console.log("click");
+    let passwordValue = password.getPasswordValue().toLowerCase();
+    window.open(`https://www.google.pl/search?q=${passwordValue}&oq=${passwordValue}&aqs=chrome..69i57j0l5.2693j0j7&sourceid=chrome&ie=UTF-8`);
 
 }
+
+
+
 
 
 

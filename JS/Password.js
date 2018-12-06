@@ -21,6 +21,15 @@ class Password{
 
     }
 
+    getPasswordValue(){
+        return this.passwordValue;
+    }
+
+
+    getPasswordCategory(){
+        return this.passwordCategory;
+    }
+
     getLettersToGuess(){
         return this.lettersToGuess;
     }
