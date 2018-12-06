@@ -57,7 +57,6 @@
 
 
 #menuLeftButton:hover{
-    background-color: rgb(19, 19, 19);
     border-color: red;
     color: red;
 }
@@ -71,33 +70,29 @@
     border: 1px solid rgb(56, 56, 56);
     border-left: none;
     display: none;
-    padding-left: 40px;
+    padding-left: 35px;
 }
 
 
-.menuLeftContent__list{
-    list-style-type: none;
+.menuLeftContent__table{
     padding: 0;
     margin-right: 0;
     margin-left: 0;
     width: 90%;
 }
 
-.menuLeftContent__list--option{
+.menuLeftContent__table--option{
     text-align: left;
-    /* height: 30px; */
-    margin: 10px;
-    overflow: auto;
-}
-
-.menuLeftContent__list--option img{
-    width: 30px;
-    height: 30px;
-    margin-right: 30px;
 }
 
 
-.test{
+.menuLeftContent__table--option:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+.menuLeftContent__table--option img{
     width: 30px;
     height: 30px;
     margin-right: 30px;
