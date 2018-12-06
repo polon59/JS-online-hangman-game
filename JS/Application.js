@@ -5,12 +5,12 @@ var input = new Input();
 
 $(document).ready(initialize());
 
-
+initializeMenu();
 
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
-    initializeMenu();
+    
 }
 
 function performMove(e) {
@@ -70,7 +70,6 @@ function findPasswordinGoogle(){
     window.open(`https://www.google.pl/search?q=${passwordValue}&oq=${passwordValue}&aqs=chrome..69i57j0l5.2693j0j7&sourceid=chrome&ie=UTF-8`);
 
 }
-
 
 
 
