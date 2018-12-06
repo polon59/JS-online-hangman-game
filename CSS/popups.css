@@ -19,10 +19,48 @@
 #popup{
     position: relative;
     text-align: center;
-    top: 30%;
+    top: 20%;
     box-shadow: 0px 0px 26px 100px rgba(1,1,1,1);
     background-image: url("../Resources/popupFrame.jpg");
     background-size: 100% 100%;
     width: 50%; margin: auto;
     padding: 4vw;
+}
+
+
+.menuLeft{
+    position: absolute;
+    text-align: center;
+    height: 30%;
+    top: 35%;
+    left: 0;
+}
+
+
+#menuLeft-button{
+    z-index: 2;
+    width: 2%;
+    min-width: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(156, 156, 156);
+    border-left: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: large;
+    cursor: pointer;
+}
+
+#menuLeft-button:hover{
+    background-color: rgb(41, 41, 41);
+    border-color: red;
+    color: red;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
 }

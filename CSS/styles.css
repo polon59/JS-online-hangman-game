@@ -136,6 +136,10 @@ h2{
         font-size: 17px;
     }
 
+    .container__box{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 
 }
 
