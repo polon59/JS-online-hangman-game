@@ -17,6 +17,7 @@
 }
 
 #popup{
+    z-index: 4;
     position: relative;
     text-align: center;
     top: 20%;
@@ -38,7 +39,7 @@
 
 
 #menuLeft__button{
-    z-index: 2;
+    z-index: 3;
     width: 2%;
     min-width: 20px;
     border-top-right-radius: 15px;
@@ -53,8 +54,9 @@
 }
 
 #menuLeft__content{
+    z-index: 2;
     width: 50%;
-    color: rgb(68, 68, 68);
+    background-color: rgb(68, 68, 68);
     border: 1px solid rgb(156, 156, 156);
     border-left: none;
     display: none;

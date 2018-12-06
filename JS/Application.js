@@ -58,8 +58,10 @@ function startNewLevel(){
 
 function initializeMenu(params) {
     $("#menuLeft__button").click(function(){
-        $("#menuLeft__content").slideToggle("slow");
-    });
+        $("#menuLeft__content").animate({
+          width: "toggle"
+        });
+      });
 }
 
 
