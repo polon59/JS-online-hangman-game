@@ -57,8 +57,8 @@ function startNewLevel(){
 
 
 function initializeMenu(params) {
-    $("#menuLeft__button").click(function(){
-        $("#menuLeft__content").animate({
+    $("#menuLeftButton").click(function(){
+        $("#menuLeftContent").animate({
           width: "toggle"
         });
       });
