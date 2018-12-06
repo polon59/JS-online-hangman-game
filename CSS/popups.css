@@ -31,6 +31,7 @@
 
 
 .menuLeft{
+    background-color: rgb(0, 0, 0);
     position: absolute;
     text-align: center;
     height: 40%;
@@ -46,7 +47,6 @@
     min-width: 20px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgb(0, 0, 0);
     border: 1px solid rgb(156, 156, 156);
     border-left: none;
     writing-mode: vertical-rl;
@@ -64,9 +64,10 @@
 
 
 #menuLeftContent{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     z-index: 2;
     width: 400px;
-    background-color: rgb(8, 8, 8);
     border: 1px solid rgb(56, 56, 56);
     border-left: none;
     display: none;
@@ -76,6 +77,22 @@
 
 .menuLeftContent__list{
     list-style-type: none;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 90%;
+}
+
+.menuLeftContent__list--option{
+    float: left;
+    height: 30px;
+    margin: 10px;
+}
+
+.menuLeftContent__list--option img{
+    width: 30px;
+    height: 100%;
+    margin-right: 30px;
 }
 
 
@@ -83,7 +100,7 @@
 
 
 @media only screen and (max-width: 400px) {
-    #menuLeft__content{
-        width: 100%;
+    #menuLeftContent{
+        width: 80%;
     }
 }
