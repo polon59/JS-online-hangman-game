@@ -3,7 +3,7 @@ var password = new Password();
 var gameStatus = new GameStatus();
 var input = new Input();
 
-initialize();
+$(document).ready(initialize());
 
 
 function initialize() {
@@ -62,11 +62,6 @@ function initializeMenu(params) {
     });
 }
 
-// $(document).ready(function(){
-//     $("#menuLeft__button").click(function(){
-//         $("#menuLeft__content").slideToggle("slow");
-//     });
-// });
 
 
 
