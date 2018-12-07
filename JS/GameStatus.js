@@ -10,6 +10,7 @@ class GameStatus{
         this.popup = new Popup();
         this.roundTimer = new Timer("roundTime");
         this.gameTimer = new Timer("totalTime");
+        this.HighScoresHandler = new HighScoresHandler();
     }
 
 
@@ -45,6 +46,7 @@ class GameStatus{
 
     endGame() {
         this.stopTimers();
+        this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber);
         this.popup.displayGameOverPopup(true, this.score, this.guessedWordsNumber);
     }
 
