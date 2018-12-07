@@ -105,6 +105,15 @@
     margin-left: 20px;
 }
 
+.highScores__table--record td{
+    padding-right: 10px;
+}
+
+.highScores__table--record img{
+    width: 20px;
+    height: 20px;
+}
+
 
 
 
@@ -117,6 +126,10 @@
 
     #highScores{
         margin-left: 5px;
+    }
+
+    .highScores__table--record td{
+        padding-right: 3px;
     }
 
     .menuLeft{
