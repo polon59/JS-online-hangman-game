@@ -1,9 +1,29 @@
 
 class HighScoresHandler{
-
+    
     constructor(){
         this.highScoresList = this.fillHighScoresListFromLocalStorage();
+        this.displayHighScores();
+    }
+    
 
+    addNewrecord(points_, guessedWords_) {
+        let newRecord = {points:points_, guessedWords:guessedWords_, date: this.setDate()};
+        this.highScoresList.push(newRecord);
+        this.sortHighScores();
+        this.saveHighScoresListInLocalStorage();
+        this.displayHighScores();
+    }
+    
+
+    sortHighScores() {
+        this.highScoresList.sort(this.compareNumber);
+        this.highScoresList.splice(3);
+    }
+    
+
+    compareNumber(a,b) {
+        return b.points - a.points;
     }
 
 
@@ -17,32 +37,33 @@ class HighScoresHandler{
     }
 
 
-    addNewrecord(points_, guessedWords_) {
-        let newRecord = {points:points_, guessedWords:guessedWords_, date: this.setDate()};
-
-        this.highScoresList.push(newRecord);
-        this.sortHighScores();
+    saveHighScoresListInLocalStorage(){
         localStorage.setItem("hangmanHS", JSON.stringify(this.highScoresList));
-
-
-
-        this.highScoresList.forEach(element => {
-            let i = 1;
-            console.log(`${i}.  ${element.points}`);
-            i++;
-        });
-        
     }
 
-    
-    
-    sortHighScores() {
-        this.highScoresList.sort(this.compareNumber);
-        this.highScoresList.splice(3);
-    }
-    
-    compareNumber(a,b) {
-        return b.points - a.points;
+
+    displayHighScores(){
+        let record = "";
+
+        for (let i = 0; i < 3; i++){
+            if (this.highScoresList[i] == null) {
+                record = `<tr class="highScores__table--record">
+                            <td>${i}</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>`
+            } else {
+                record = `<tr class="highScores__table--record">
+                            <td>${i}</td>
+                            <td>${this.highScoresList[i].points}</td>
+                            <td>${this.highScoresList[i].guessedWords}</td>
+                            <td>${this.highScoresList[i].date}</td>
+                        </tr>`
+            }
+
+            $("#highScores__table").append(record);
+        }
     }
     
 
@@ -55,57 +76,9 @@ class HighScoresHandler{
         if(day<10) {
             day = `0${day}`;
         } 
-        
         if(month<10) {
             month = `0${month}`;
         } 
-        
         return `${day}.${month}.${year}`
     }
 }
-
-
-
-
-
-
-
-// var highScores;
-// fillHighScoresFromLocalStorage();
-// displayHighScores();
-
-
-// function addNewrecord(record) {
-//     highScores.push(record);
-//     sortHighScores();
-//     localStorage.setItem("highScores", JSON.stringify(highScores));
-// }
-
-
-// function sortNumber(a,b) {
-//     return b - a;
-// }
-
-
-// function sortHighScores(params) {
-//     highScores.sort(sortNumber);
-//     highScores.splice(3);
-// }
-
-
-// function displayHighScores(params) {
-
-//     for (let index = 0; index < highScores.length; index++) {
-//         document.getElementById(`highScore${index}`).innerHTML = highScores[index];
-//     }
-   
-// }
-
-
-// function fillHighScoresFromLocalStorage() {
-//     if (localStorage.getItem("highScores") == null) {
-//         highScores = [];
-//       }else{
-//         highScores = JSON.parse(localStorage.getItem("highScores"));
-//       }
-// }
