@@ -61,6 +61,10 @@ function initializeMenu() {
     $("#menuLeftButton").click(function(){
         $("#menuLeftContent").animate({width: "toggle"});
         });
+
+    $("#highScoresButton").click(function(){
+        $("#highScores").animate({height: "toggle"});
+        });
 }
 
 
