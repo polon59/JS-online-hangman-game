@@ -9,10 +9,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
-    <!-- menuLeft__button menuLeft__content -->
 
     <body>
-        
         <div id="navbar">
             <div class="navbar__cell"><h3 id="totalTime" class="timeCounter">Total time : 00:00</h3></div>
             <div class="navbar__cell"><h2 id="score">SCORE : 0</h2></div>
@@ -22,14 +20,16 @@
         <div id="menuLeftButton" class="menuLeft">MENU</div>
 
         <div id="menuLeftContent" class="menuLeft">
-
-
             <table class="menuLeftContent__table">
-                <tr onclick="findPasswordinGoogle()" class="menuLeftContent__table--option">
+                <tr onclick="restartGame(); hideMenu()" class="menuLeftContent__table--option">
+                    <td><img src="Resources/icons/restartIcon.png"></td>
+                    <td>Restart game</td>
+                </tr>
+                <tr onclick="findPasswordinGoogle(); hideMenu()" class="menuLeftContent__table--option">
                     <td><img src="Resources/icons/googleIcon.png"></td>
                     <td>Find password in google</td>
                 </tr>
-                <tr class="menuLeftContent__table--option">
+                <tr onclick="hideMenu()" class="menuLeftContent__table--option">
                     <td><img src="Resources/icons/googleMapsIcon.png"></td>
                     <td>Discover location in google maps</td>
                 </tr>
@@ -38,7 +38,6 @@
                     <td>High scores:</td>
                 </tr>
             </table>
-
             <!-- <ul>
                 <li id="highScore0">-</li>
                 <li id="highScore1">-</li>
