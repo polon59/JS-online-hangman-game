@@ -42,6 +42,13 @@ class HighScoresHandler{
     }
 
 
+    resetHighScores(){
+        localStorage.removeItem("hangmanHS");
+        this.highScoresList = this.fillHighScoresListFromLocalStorage();
+        this.displayHighScores();
+    }
+
+
     displayHighScores(){
         let record = "";
         let newTableContent = `<tr class="highScores__table--record">

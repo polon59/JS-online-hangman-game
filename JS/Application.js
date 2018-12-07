@@ -81,6 +81,11 @@ function findPasswordinGoogle(){
 }
 
 
+function resetHighScores(){
+    gameStatus.resetHighScores();
+}
+
+
 
 
 

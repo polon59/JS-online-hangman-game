@@ -91,6 +91,9 @@ class GameStatus{
     }
 
 
+    resetHighScores(){
+        this.HighScoresHandler.resetHighScores();
+    }
 
 
 
