@@ -46,7 +46,6 @@ class GameStatus{
 
     endGame() {
         this.stopTimers();
-        this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber);
         this.popup.displayGameOverPopup(true, this.score, this.guessedWordsNumber);
     }
 
@@ -70,6 +69,7 @@ class GameStatus{
 
     // on button clicked
     restartGame(){
+        this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber);
         this.lives = 9;
         this.score = 0;
         this.displayScore();
