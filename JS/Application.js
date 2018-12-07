@@ -64,6 +64,11 @@ function initializeMenu() {
 }
 
 
+function hideMenu() {
+    $("#menuLeftButton").click();
+}
+
+
 function findPasswordinGoogle(){
     console.log("click");
     let passwordValue = password.getPasswordValue().toLowerCase();
