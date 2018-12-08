@@ -2,30 +2,26 @@
 
 
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Fredericka the Great', cursive;
     letter-spacing: 0.1vw;
+    font-family: 'Fredericka the Great', cursive;
+    color: white;
+    background-color: black;
     content: url("../Resources/h8.jpg") url("../Resources/h9.jpg") url("../Resources/h7.jpg") url("../Resources/h6.jpg") url("../Resources/h5.jpg") url("../Resources/h4.jpg") url("../Resources/h3.jpg") url("../Resources/h2.jpg") url("../Resources/h1.jpg") url("../Resources/h0.jpg");
 }
-
 
 h3{
     text-align: center;
 }
 
-
 #container{
-    margin-top: 4%;
+    position: relative;
     height: 40%;
     width: 70%;
+    margin-top: 4%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    position: relative;
-    
 }
-
 
 .container__box{
     text-align: center;
@@ -68,7 +64,6 @@ h2{
     height: 20vw;
     width: 50%;
     float: left;
-    
 }
 
 #hangmanImageContainer{
@@ -81,8 +76,8 @@ h2{
     float: left; 
     width: 3.5vw;
     height: 3.5vw;
-    min-height: 30px;
-    min-width: 30px;
+    min-height: 25px;
+    min-width: 25px;
     margin: 0.4vw;
     text-align: center;
     border: 1px solid rgb(170, 170, 170);
@@ -95,11 +90,6 @@ h2{
     color: red;
     border: 1px solid red;
     cursor: pointer;
-}
-
-
-.letterHidden{
-    visibility: hidden;
 }
 
 
@@ -122,7 +112,7 @@ h2{
 
     .navbar__cell{
         float: none;
-        width: 33%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
