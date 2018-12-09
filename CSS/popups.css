@@ -2,7 +2,7 @@
     display: none;
     position: absolute;
     z-index: 4;
-    width: 99%;
+    width: 98%;
     height: 100%;
     top: 0;
     background-color: rgba(0, 0, 0, 0.753);
@@ -114,6 +114,11 @@
 
 
 @media only screen and (max-width: 535px) {
+    #popup{
+        width: 80%;
+        overflow: hidden;
+    }
+
     #menuLeftContent{
         width: 90%;
         padding-left: 23px;
