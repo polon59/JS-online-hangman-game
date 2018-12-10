@@ -14,6 +14,9 @@ class Input{
         if (pressedKeyCode === 13 && document.getElementById("popupShadow").style.display == "block") {
             document.getElementById("popupButton").click();
         } 
+        else if(pressedKeyCode === 27){
+            $("#menuLeftButton").click();
+        }
         else {
 
             let pressedKeyValue = String.fromCharCode(pressedKeyCode);
@@ -27,11 +30,9 @@ class Input{
                 }
                 
             } catch (err) {
-                console.log("ERROR");
+                console.log("Invalid key");
             }
         }
-
-        
     }
 
 
