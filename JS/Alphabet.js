@@ -2,11 +2,9 @@ class Alphabet{
     
         constructor(){
             this.letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U", "Q","V","W","X","Y","Z"];
-    
         }
     
-    
-    displayAlphabet() { 
+    displayAlphabet() {
         var alphabetDivNewContent = "";
     
         this.letters.forEach(letter => {
@@ -16,12 +14,10 @@ class Alphabet{
         $("#alphabet").html(alphabetDivNewContent);
     }
 
-
     hideUsedLetter(usedLetter){
         usedLetter.target.style.color = "rgb(51, 23, 23)";
         usedLetter.target.style.border = "1px solid rgb(51, 23, 23)";
         usedLetter.target.onclick = "";
         usedLetter.target.style.visibility = "hidden";
-        
     }
 }

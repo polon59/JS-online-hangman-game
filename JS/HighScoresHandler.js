@@ -74,14 +74,12 @@ class HighScoresHandler{
                             <td>${this.highScoresList[i].date}</td>
                         </tr>`
             }
-
             newTableContent+=record;
         }
-
         $("#highScores__table").html(newTableContent);
     }
     
-
+    
     setDate(){
         let today = new Date();
         let day = today.getDate();

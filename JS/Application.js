@@ -3,14 +3,12 @@ var password = new Password();
 var gameStatus = new GameStatus();
 var input = new Input();
 
-$(document).ready(initialize());
+$(document).ready(initialize(), initializeMenu());
 
-initializeMenu();
 
 function initialize() {
     alphabet.displayAlphabet();
     password.initializePassword();
-    
 }
 
 function performMove(e) {
@@ -19,14 +17,11 @@ function performMove(e) {
     password.displayPasswordAndCategory();
     changeLivesNumber(guessed);
     checkIfPasswordIsComplete();
-    
 }
-
 
  function generateNewPassword() {
     initialize();
  }
-
 
 function checkIfPasswordIsComplete() {
     let lettersToGuess = password.getLettersToGuess();
@@ -37,7 +32,6 @@ function checkIfPasswordIsComplete() {
     }
 }
 
-
 function changeLivesNumber(guessed){
     if (guessed) {
         gameStatus.addScore(1);
@@ -46,32 +40,27 @@ function changeLivesNumber(guessed){
     }  
 }
 
-
 function restartGame() {
     gameStatus.restartGame();
 }
-
 
 function startNewLevel(){
     gameStatus.startNewLevel();
 }
 
-
 function initializeMenu() {
     $("#menuLeftButton").click(function(){
         $("#menuLeftContent").animate({width: "toggle"});
         });
-
+        
     $("#highScoresButton").click(function(){
         $("#highScores").animate({height: "toggle"});
         });
 }
 
-
 function hideMenu() {
     $("#menuLeftButton").click();
 }
-
 
 function findPasswordinGoogle(){
     console.log("click");
@@ -79,7 +68,6 @@ function findPasswordinGoogle(){
     window.open(`https://www.google.pl/search?q=${passwordValue}&oq=${passwordValue}&aqs=chrome..69i57j0l5.2693j0j7&sourceid=chrome&ie=UTF-8`);
 
 }
-
 
 function resetHighScores(){
     gameStatus.resetHighScores();

@@ -5,11 +5,8 @@ class PasswordGenerator {
             value: "",
             category: ""
         };
-
         this.indexesUsedBefore = [];
     }
-
-
 
     generatePassword() {
         this.assignValues();
@@ -33,7 +30,6 @@ class PasswordGenerator {
             } else {
                 this.indexesUsedBefore.length = 0; //reset list of used passwords
             }
-
         }
         //console.log(this.indexesUsedBefore);
         return randomInt;

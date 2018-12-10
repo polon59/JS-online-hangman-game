@@ -8,20 +8,18 @@ class Popup{
         this.buttonFunction = "";
         this.guessedWords = "";
     }
-
-
+    
     displayNextLevelPopup(scoreEarnedOnLevel, guessedWordsNumber){
         let roundTime = document.getElementById("roundTime").innerHTML;
         this.popupHeader = "LEVEL COMPLETE!";
         this.scoreInfo = `ON THIS LEVEL EARNED ${scoreEarnedOnLevel} SCORE`;
         this.timeInfo = `${roundTime}`;
         this.buttonContent = "NEXT LEVEL";
-        this.buttonFunction = "startNewLevel()"
+        this.buttonFunction = "startNewLevel()";
         this.guessedWords = `NEXT LEVEL: ${guessedWordsNumber}`;
 
         this.writeNewContent();
     }
-
 
     displayGameOverPopup(isResultInHighscore, scoreEarnedInGame, guessedWordsNumber){
         let gameTime = document.getElementById("totalTime").innerHTML;
@@ -29,17 +27,15 @@ class Popup{
         this.scoreInfo = `YOUR SCORE: ${scoreEarnedInGame}`;
         this.timeInfo = `${gameTime}`;
         this.buttonContent = "RESTART";
-        this.buttonFunction = "restartGame()"
+        this.buttonFunction = "restartGame()";
         this.guessedWords = `GUESSED WORDS: ${guessedWordsNumber}`;
 
         if (isResultInHighscore) {
             this.scoreInfo = `NEW HIGHSCORE: ${scoreEarnedInGame}`;
-            
         }
         
         this.writeNewContent();
     }
-
 
     writeNewContent(){
         let newContent = `
@@ -57,7 +53,6 @@ class Popup{
         $("#popupShadow").html(newContent);
         $("#popupShadow").show(1000);
     }
-
 
     static hidePopup(){
         $("#popupShadow").hide(1000);

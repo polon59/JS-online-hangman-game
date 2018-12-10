@@ -9,7 +9,6 @@ class Password{
         this.lettersToGuess;
     }
 
-
     initializePassword(){
         this.password = this.passwordGenerator.generatePassword();
         this.hiddenPasswordValue = new Array;
@@ -25,7 +24,6 @@ class Password{
         return this.passwordValue;
     }
 
-
     getPasswordCategory(){
         return this.passwordCategory;
     }
@@ -34,9 +32,7 @@ class Password{
         return this.lettersToGuess;
     }
 
-
     hidePassword() {
-        
         for (let i = 0; i < this.passwordValue.length; i++) {
             if (this.passwordValue.charAt(i) == " ") {
                 this.hiddenPasswordValue.push(" ");
@@ -51,7 +47,6 @@ class Password{
         }
     }
 
-
     displayPasswordAndCategory() {
         let valueToWrite = "";
     
@@ -62,7 +57,6 @@ class Password{
         $("#password").html(valueToWrite);
         $("#category").html(`Capital: ${this.passwordCategory}`);   
     }
-
 
     checkIfLetterInPassword(e) {
         let letter = e.target.textContent;
@@ -76,10 +70,6 @@ class Password{
                 guessed = true;
             }     
         }
-
         return guessed;
     }
-
-
-
 }

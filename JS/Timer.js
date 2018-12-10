@@ -5,26 +5,21 @@ class Timer{
         this.timerName = this.setTimerName();
         this.isPaused = false;
         this.totalSeconds = 0;
-        
         setInterval(() => this.setTime(), 1000);
     }
-
 
     resetTime(){
         this.totalSeconds = 0;
         this.startTimer();
     }
 
-
     startTimer(){
         this.isPaused = false;
     }
 
-
     pause(){
         this.isPaused = true;
     }
-
 
     setTimerName(){
         if (this.timerID == "totalTime") {
@@ -33,7 +28,6 @@ class Timer{
             return "Round time";
         }
     }
-
 
     setTime() {
         if (!this.isPaused) {
@@ -45,13 +39,10 @@ class Timer{
         }
     }
     
-
     adjustTimeFormat(value){
         if (value < 10){
             value = "0" + value;
         }
         return value;
     }
-
-
 }

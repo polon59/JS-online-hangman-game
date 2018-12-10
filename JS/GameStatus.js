@@ -13,43 +13,33 @@ class GameStatus{
         this.HighScoresHandler = new HighScoresHandler();
     }
 
-
     addScore(value){
         this.score+=value;
         this.scoreEarnedOnLevel += value;
         this.displayScore();
     }
 
-
     displayScore(){
         this.scoreImageDiv.innerHTML = `SCORE : ${this.score}`;
     }
 
-    
-
     displayGameStatusImage(){
         this.gameStatusImageDiv.style.backgroundImage = `url("Resources/h${this.lives}.jpg")`;
     }
-
-
 
     subtractLives(){
         this.lives --;
         this.displayGameStatusImage();
     
         if (this.lives == 0) {
-            // GAME OVER
             this.endGame();
         }
     }
-
 
     endGame() {
         this.stopTimers();
         this.popup.displayGameOverPopup(true, this.score, this.guessedWordsNumber);
     }
-
-
 
     endLevel(){
         this.stopTimers();
@@ -58,14 +48,12 @@ class GameStatus{
         this.scoreEarnedOnLevel = 0;
     }
 
-
     // on button clicked
     startNewLevel(){
         generateNewPassword();
         this.roundTimer.resetTime();
         this.gameTimer.startTimer();
     }
-
 
     // on button clicked
     restartGame(){
@@ -78,24 +66,17 @@ class GameStatus{
         generateNewPassword();
     }
 
-
     stopTimers(){
         this.roundTimer.pause();
         this.gameTimer.pause();
     }
 
-    
     resetTimers(){
         this.roundTimer.resetTime();
         this.gameTimer.resetTime();
     }
 
-
     resetHighScores(){
         this.HighScoresHandler.resetHighScores();
     }
-
-
-
-    
 }
