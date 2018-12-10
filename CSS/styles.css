@@ -6,6 +6,7 @@ body{
     font-family: 'Fredericka the Great', cursive;
     color: white;
     background-color: black;
+    user-select: none;
     content: url("../Resources/h8.jpg") url("../Resources/h9.jpg") url("../Resources/h7.jpg") url("../Resources/h6.jpg") url("../Resources/h5.jpg") url("../Resources/h4.jpg") url("../Resources/h3.jpg") url("../Resources/h2.jpg") url("../Resources/h1.jpg") url("../Resources/h0.jpg");
 }
 
@@ -83,7 +84,7 @@ h2{
     border: 1px solid rgb(170, 170, 170);
     font-size: x-large;
     transition: 0.4s ease;
-    user-select: none;
+    
 }
 
 .letter:hover{

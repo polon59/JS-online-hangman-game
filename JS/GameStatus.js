@@ -65,6 +65,7 @@ class GameStatus{
         this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber, this.cheatUsed);
         this.lives = 9;
         this.score = 0;
+        this.guessedWordsNumber = 0;
         this.cheatUsed = false;
         this.displayScore();
         this.displayGameStatusImage();
