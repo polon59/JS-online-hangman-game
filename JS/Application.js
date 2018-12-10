@@ -63,7 +63,7 @@ function hideMenu() {
 }
 
 function findPasswordinGoogle(){
-    console.log("click");
+    gameStatus.useCheat();
     let passwordValue = password.getPasswordValue().toLowerCase();
     window.open(`https://www.google.pl/search?q=${passwordValue}&oq=${passwordValue}&aqs=chrome..69i57j0l5.2693j0j7&sourceid=chrome&ie=UTF-8`);
 

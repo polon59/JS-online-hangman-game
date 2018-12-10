@@ -5,6 +5,7 @@ class GameStatus{
         this.scoreImageDiv = document.getElementById("score");
         this.lives = 9;
         this.score = 0;
+        this.cheatUsed = false;
         this.guessedWordsNumber = 0;
         this.scoreEarnedOnLevel = 0;
         this.popup = new Popup();
@@ -21,6 +22,10 @@ class GameStatus{
 
     displayScore(){
         this.scoreImageDiv.innerHTML = `SCORE : ${this.score}`;
+    }
+
+    useCheat(){
+        this.cheatUsed = true;
     }
 
     displayGameStatusImage(){
@@ -57,9 +62,10 @@ class GameStatus{
 
     // on button clicked
     restartGame(){
-        this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber);
+        this.HighScoresHandler.addNewrecord(this.score, this.guessedWordsNumber, this.cheatUsed);
         this.lives = 9;
         this.score = 0;
+        this.cheatUsed = false;
         this.displayScore();
         this.displayGameStatusImage();
         this.resetTimers();

@@ -7,12 +7,19 @@ class HighScoresHandler{
     }
     
 
-    addNewrecord(points_, guessedWords_) {
-        let newRecord = {points:points_, guessedWords:guessedWords_, date: this.setDate()};
+    addNewrecord(points_, guessedWords_, cheatUsed) {
+        let newRecord = {points:points_, guessedWords:guessedWords_, date: this.setDate(), cheat: this.checkIfCheaUsed(cheatUsed)};
         this.highScoresList.push(newRecord);
         this.sortHighScores();
         this.saveHighScoresListInLocalStorage();
         this.displayHighScores();
+    }
+
+    checkIfCheaUsed(cheatUsed){
+        if(cheatUsed){
+            return "Yes";
+        }
+        return "No";
     }
     
 
@@ -56,12 +63,14 @@ class HighScoresHandler{
                                 <td>points</td>
                                 <td>level</td>
                                 <td>date</td>
+                                <td>cheat</td>
                             </tr>`;
 
         for (let i = 0; i < 3; i++){
             if (this.highScoresList[i] == null) {
                 record = `<tr class="highScores__table--record">
                             <td><img src="Resources/icons/leaderboard${i}.png"></td>
+                            <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
@@ -72,6 +81,7 @@ class HighScoresHandler{
                             <td>${this.highScoresList[i].points}</td>
                             <td>${this.highScoresList[i].guessedWords}</td>
                             <td>${this.highScoresList[i].date}</td>
+                            <td>${this.highScoresList[i].cheat}</td>
                         </tr>`
             }
             newTableContent+=record;
