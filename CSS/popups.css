@@ -25,7 +25,7 @@
     top: 20%;
     padding: 4vw;
     text-align: center;
-    box-shadow: 0px 0px 26px 100px rgba(1,1,1,1);
+    box-shadow: 0px 0px 20px 50px rgb(0, 0, 0);
     background-image: url("../Resources/popupFrame.jpg");
     background-size: 100% 100%;
 }
