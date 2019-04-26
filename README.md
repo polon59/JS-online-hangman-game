@@ -6,6 +6,7 @@ Player starts game with 9 lives. Each guessed letter gives one point. Each guess
 Use esc key to see main menu. If you cannot guess password, you can search it in google by clicking on option in main menu
 (In that case your result will be saved with annotation that cheat was used).
 High scores are stored in browsers local storage.
+Used technologies: HTML5, CSS3,Java Script, Bootstrap.
 
 ![hangman1](https://user-images.githubusercontent.com/34944174/49736700-1d7a2d00-fc8b-11e8-92d1-e9ef8a33b601.png)
 
